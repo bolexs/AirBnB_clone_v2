@@ -15,9 +15,8 @@ class FileStorage:
         else:
             tmp_dict = {}
             for k, v in self.__objects.items():
-                name = k.split('.')
-                if name[0] in cls.__name__:
-                    tmp_dict[k] = self.__objects[k]
+                if cls == v.__class__ or cls == v.__class__.__name__:
+                    tmp_dict[k] = v
             return tmp_dict
 
     def new(self, obj):
