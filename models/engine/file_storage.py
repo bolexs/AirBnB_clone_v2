@@ -60,3 +60,8 @@ class FileStorage:
         """Deletes obj from __objects"""
         if obj is None:
             return
+        else:
+            k = obj.__class__.__name__ + '.' + obj.id
+            if k in self.__objects:
+                del self.__objects[k]
+                self.save()
