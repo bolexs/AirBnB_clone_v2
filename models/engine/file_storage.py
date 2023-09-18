@@ -17,7 +17,7 @@ class FileStorage:
             for k, v in self.__objects.items():
                 name = k.split('.')
                 if name[0] in cls.__name__:
-                    tmp_dict[k] = v
+                    tmp_dict[k] = self.__objects[k]
             return tmp_dict
 
     def new(self, obj):
